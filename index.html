@@ -25,21 +25,50 @@
     <form action="" class="survey">
       <div class="question1">
         <h3>Have you always dreamed of a steady trickle of advertisement dollars plopping into your pocket because of a mindless game that Apple finally allowed you to offer as freemium on the App Store? <em>yes or no</em></h3>
-        <div class="radio">
-          <label>
-            <input type="radio" name="flavor" value="chocolate" checked>
-            Chocolate
-          </label>
+        <div class="radios">
+          <label>yes</label>
+          <input type="radio" name="appStore" value="11" checked>
         </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="flavor" value="vanilla">
-            Vanilla
-          </label>
+        <div class="radios">
+          <label>no</label>
+          <input type="radio" name="appStore" value="0">
         </div>
-        <div>
-          <label></label>
-          <input type="text" name="" id="">
+      </div>
+      <div class="question2">
+        <h3>Please select any of the following phrases that would best describe you five years from now</h3>
+        <div class="checkboxes">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="jrDev" value="0" />
+            <label class="form-check-label" for="jrDev">junior developer with happy work-life balance</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="midLevel" value="3" />
+            <label class="form-check-label" for="midLevel">mid-level developer who has allowed hairstyle to assume a life of its own</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="projMgr" value="4" />
+            <label class="form-check-label" for="projMgr">project manager who is "managing"</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="jrDevPlus" value="1" />
+            <label class="form-check-label" for="jrDevPlus">junior developer who is about to switch roles, achieve significant raise</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="hanging" value="0" />
+            <label class="form-check-label" for="hanging">mid-level developer who prioritizes the greater good</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="boss" value="7" />
+            <label class="form-check-label" for="boss">soliciting series A funding for four-or-five person company</label>
+          </div>
+        </div>
+      </div>
+      <div class="question3">
+        <h3 class="question-text">You're beginning to sense there is brilliant logic happening behind the scenes in this survey</h3>
+        <div class="form-check-label">
+          <label for="logic-sensed">Yep</label>
+          <input type="button" value="4" id="logic-sensed">
+          <small class="hint">Note: even if you disagree, please click the button anyway to continue survey</small>
         </div>
       </div>
     </form>
