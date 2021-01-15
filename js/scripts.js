@@ -16,16 +16,17 @@ $(document).ready(function() {
     resultsObj.quickBuck = $("input:radio[name=appStore]:checked").val();
     let ambitionNumber = 0;
     $("input:checkbox[name=lifestyle]:checked").each(function() {
-      ambitionNumber += $(this).val();
+      ambitionNumber += parseInt($(this).val());
     })
     resultsObj.ambitionNumber = ambitionNumber;
     resultsObj.ambitionNumber += 4;
-    // gather all string values and store on a single object as meaningful key-value pairs
-    $(".results").show();
-    $("input:checkbox[name=work-transportation]:checked").each(function() {
-      const workTransportationMode = $(this).val();
-      $('#work-responses').append(workTransportationMode + "<br>");
+    resultsObj.petLove = $("input:radio[name=pets]:checked").val();
+    ideasArray = [];
+    $("input:checkbox[name=ideas]:checked").each(function() {
+      ideasArray.push($(this).val());
     });
+    resultsObj.ideas = ideasArray;
+    $(".results").show();
     $('#transportation_survey').hide();
   });
   // nav button which triggers a forwards through the survey questions (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results. Also, call this function to advance by one question input:button with "#logic-sensed" is clicked.
