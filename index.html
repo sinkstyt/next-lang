@@ -24,18 +24,18 @@
     </div>
     <form action="" class="survey">
       <div class="question1">
-        <h3>Have you always dreamed of a steady trickle of advertisement dollars plopping into your pocket because of a mindless game that Apple finally allowed you to offer as freemium on the App Store? <em>yes or no</em></h3>
+        <h3 class="question-text">Have you always dreamed of a steady trickle of advertisement dollars accruing in your pocket, because you single-handedly built and published a mindless game that Apple finally allowed you to peddle via its App Store?</h3>
         <div class="radios">
-          <label>yes</label>
-          <input type="radio" name="appStore" value="11" checked>
+          <label for="iOS">yes</label>
+          <input type="radio" name="appStore" value="11" id="iOS" checked>
         </div>
         <div class="radios">
-          <label>no</label>
-          <input type="radio" name="appStore" value="0">
+          <label for="not-iOS">no</label>
+          <input type="radio" name="appStore" value="0" id="not-iOS">
         </div>
       </div>
       <div class="question2">
-        <h3>Please select any of the following phrases that would best describe you five years from now</h3>
+        <h3 class="question-text">Please select any of the following phrases that would best describe you five years from now</h3>
         <div class="checkboxes">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="jrDev" value="0" />
@@ -69,6 +69,68 @@
           <label for="logic-sensed">Yep</label>
           <input type="button" value="4" id="logic-sensed">
           <small class="hint">Note: even if you disagree, please click the button anyway to continue survey</small>
+        </div>
+      </div>
+      <div class="question4">
+        <h3 class="question-text">I identify as:</h3>
+        <div class="radios">
+          <label for="dogPerson">a dog person.</label>
+          <input type="radio" name="pets" value="3" id="dogPerson" checked>
+        </div>
+        <div class="radios">
+          <label for="catPerson">a cat person.</label>
+          <input type="radio" name="pets" value="3" id="catPerson">
+        </div>
+        <div class="radios">
+          <label for="ferretPerson">a ferret person. (<em>ie.</em> I currently count at least one ferret as a family member.)</label>
+          <input type="radio" name="pets" value="3" id="ferretPerson">
+        </div>
+        <div class="radios">
+          <label for="dovePerson">a person who feeds pigeons (ducks count, too), even just that one time.</label>
+          <input type="radio" name="pets" value="13" id="dovePerson">
+        </div>
+        <div class="radios">
+          <label for="no-pets">a no-pet person.</label>
+          <input type="radio" name="pets" value="0" id="no-pets">
+        </div>
+        <div class="radios">
+          <label for="animalPerson">a person who can't bear the anguish that comes with imagining having to say goodby e to my pet/s.</label>
+          <input type="radio" name="pets" value="26" id="animalPerson">
+        </div>
+        <div class="radios">
+          <label for="birdPerson">a person who can identify a bird call or two (or more) and owns a pair of binoculars.</label>
+          <input type="radio" name="pets" value="17" id="birdPerson">
+        </div>
+      </div>
+      <div class="question5">
+        <h3 class="question-text">Check the box next to any statement which describes you:</h3>
+        <div class="checkboxes">
+          <label for="font-oriented">I have recently gone down a coding deep dive into how to make or at least edit a font.</label>
+          <input type="checkbox" id="font-oriented" value="front-end" checked>
+        </div>
+        <div class="checkboxes">
+          <label for="number-oriented">I have recently gone down an internet-reading deep dive about a data science topic.</label>
+          <input type="checkbox" id="number-oriented" value="back-end">
+        </div>
+        <div class="checkboxes">
+          <label for="solution-oriented">A quick, mostly working solution from even a four-year-old or older Stack Overflow post is really all I need right now.</label>
+          <input type="checkbox" id="solution-oriented" value="dead-end">
+        </div>
+        <div class="checkboxes">
+          <label for="idea-oriented">I have pondered how concepts from other fields of inquiry might have some useful bearing on the AR / VR work that I am doing in my job.</label>
+          <input type="checkbox" id="idea-oriented" value="space-cadet">
+        </div>
+        <div class="checkboxes">
+          <label for="anti-vr">AR and VR are both dumb. People should really be taking more hikes.</label>
+          <input type="checkbox" id="anti-vr" value="say-no-to-vr">
+        </div>
+        <div class="checkboxes">
+          <label for="fin-tech">I will someday (or have already) craft an algorithm that churns out bitcoins like nobodies' business.</label>
+          <input type="checkbox" id="fin-tech" value="dollar-sign">
+        </div>
+        <div class="checkboxes">
+          <label for="music">I own one or more of the following musical instruments/devices: piano, recorder, oboe, bass clarinet, flute, baritone horn, keyboard, guitar, MIDI keyboard, microphone whose inner workings I considered before buying.</label>
+          <input type="checkbox" id="music" value="dollar-sign">
         </div>
       </div>
     </form>
