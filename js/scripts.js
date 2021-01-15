@@ -9,21 +9,39 @@
 
 // UI Logic ------------->
 $(document).ready(function() {
-  $("form#transportation_survey").submit(function(event) {
+  $("form.survey").submit(function(event) {
     event.preventDefault();
+    let resultsObj = {};
     // collect all number values by question onto a single key-value pairing stored on survey-results object.
-
+    resultsObj.quickBuck = $("input:radio[name=appStore]:checked").val();
+    let ambitionNumber = 0;
+    $("input:checkbox[name=lifestyle]:checked").each(function() {
+      ambitionNumber += $(this).val();
+    })
+    resultsObj.ambitionNumber = ambitionNumber;
+    resultsObj.ambitionNumber += 4;
     // gather all string values and store on a single object as meaningful key-value pairs
-    $("#work-responses").show();
+    $(".results").show();
     $("input:checkbox[name=work-transportation]:checked").each(function() {
       const workTransportationMode = $(this).val();
       $('#work-responses').append(workTransportationMode + "<br>");
     });
     $('#transportation_survey').hide();
   });
-  // nav button which triggers a forwards through the survey questions (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results
+  // nav button which triggers a forwards through the survey questions (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results. Also, call this function to advance by one question input:button with "#logic-sensed" is clicked.
 
   // nav button which goes back one survey question, edge case: on first question--> alert("there's no where 'previous' to go")
 
 
 });
+/*
+1. C
+2. Java
+3. Python
+4. C++
+5. Ruby
+6. Go
+7. Swift
+8. TypeScript
+9. Kotlin
+*/
