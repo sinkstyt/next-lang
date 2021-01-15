@@ -4,3 +4,13 @@ body {
 h1, h2 {
   font-family: 'Rubik Mono One', sans-serif;
 }
+.question1, .question2, .question3, .question4, .question5, .get-results, .results {
+  display: none;
+}
+.navigation {
+  /* holds Previous/Next buttons for navigating through survey qs */
+  /* make sure these work AND are positioned, sized sensibly */
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2.2rem;
+  padding: 0px 0px 4px;
+}
