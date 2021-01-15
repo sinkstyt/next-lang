@@ -19,17 +19,17 @@
     </div>
     <div class="all-languages">
       <h2>C Java Python C++ Ruby Go Swift TypeScript Kotlin</h2>
-      <p>Without a whole lot of fuss or even a decent introduction to the qualities or typical applications of these languages, the image here shows which languages this survey could possibly suggest you learn next.</p>
+      <p>Without a whole lot of fuss or even a decent introduction to the qualities or typical applications of these languages, the image here shows which languages this survey could possibly suggest you learn next. If you've already got a pretty good handle on all these languages, then this survey is perhaps not for you, you polymath.</p>
       <img src="img/all-languages-image1.png" alt="an image showing the logos for C, Java, Python, C++, Ruby, Go, Swift, TypeScript, Kotlin">
     </div>
     <form action="" class="survey">
       <div class="question1">
         <h3 class="question-text">Have you always dreamed of a steady trickle of advertisement dollars accruing in your pocket, because you single-handedly built and published a mindless game that Apple finally allowed you to peddle via its App Store?</h3>
-        <div class="radios">
+        <div class="form-check">
           <label for="iOS">yes</label>
           <input type="radio" name="appStore" value="11" id="iOS" checked>
         </div>
-        <div class="radios">
+        <div class="form-check">
           <label for="not-iOS">no</label>
           <input type="radio" name="appStore" value="0" id="not-iOS">
         </div>
@@ -37,105 +37,107 @@
       <div class="question2">
         <h3 class="question-text">Please select any of the following phrases that would best describe you five years from now</h3>
         <div class="checkboxes">
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input class="form-check-input" type="checkbox" id="jrDev" value="0" />
-            <label class="form-check-label" for="jrDev">junior developer with happy work-life balance</label>
+            <label class="form-check-label" name="lifestyle" for="jrDev">junior developer with happy work-life balance</label>
           </div>
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input class="form-check-input" type="checkbox" id="midLevel" value="3" />
-            <label class="form-check-label" for="midLevel">mid-level developer who has allowed hairstyle to assume a life of its own</label>
+            <label class="form-check-label" name="lifestyle" for="midLevel">mid-level developer who has allowed hairstyle to assume a life of its own</label>
           </div>
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input class="form-check-input" type="checkbox" id="projMgr" value="4" />
-            <label class="form-check-label" for="projMgr">project manager who is "managing"</label>
+            <label class="form-check-label" name="lifestyle" for="projMgr">project manager who is "managing"</label>
           </div>
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input class="form-check-input" type="checkbox" id="jrDevPlus" value="1" />
-            <label class="form-check-label" for="jrDevPlus">junior developer who is about to switch roles, achieve significant raise</label>
+            <label class="form-check-label" name="lifestyle" for="jrDevPlus">junior developer who is about to switch roles, achieve significant raise</label>
           </div>
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input class="form-check-input" type="checkbox" id="hanging" value="0" />
-            <label class="form-check-label" for="hanging">mid-level developer who prioritizes the greater good</label>
+            <label class="form-check-label" name="lifestyle" for="hanging">mid-level developer who prioritizes the greater good</label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="boss" value="7" />
-            <label class="form-check-label" for="boss">soliciting series A funding for four-or-five person company</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="boss" value="9" />
+            <label class="form-check-label" name="lifestyle" for="boss">soliciting series A (or B, I guess) funding for four-or-five person company</label>
           </div>
         </div>
       </div>
       <div class="question3">
         <h3 class="question-text">You're beginning to sense there is brilliant logic happening behind the scenes in this survey</h3>
         <div class="form-check-label">
-          <label for="logic-sensed">Yep</label>
-          <input type="button" value="4" id="logic-sensed">
+          <label for="logic-sensed">Yes I am</label>
+          <input type="button" value="4" name="ambition-added" id="logic-sensed">
           <small class="hint">Note: even if you disagree, please click the button anyway to continue survey</small>
         </div>
       </div>
       <div class="question4">
         <h3 class="question-text">I identify as:</h3>
-        <div class="radios">
-          <label for="dogPerson">a dog person.</label>
-          <input type="radio" name="pets" value="3" id="dogPerson" checked>
-        </div>
-        <div class="radios">
-          <label for="catPerson">a cat person.</label>
-          <input type="radio" name="pets" value="3" id="catPerson">
-        </div>
-        <div class="radios">
-          <label for="ferretPerson">a ferret person. (<em>ie.</em> I currently count at least one ferret as a family member.)</label>
-          <input type="radio" name="pets" value="3" id="ferretPerson">
-        </div>
-        <div class="radios">
-          <label for="dovePerson">a person who feeds pigeons (ducks count, too), even just that one time.</label>
-          <input type="radio" name="pets" value="13" id="dovePerson">
-        </div>
-        <div class="radios">
-          <label for="no-pets">a no-pet person.</label>
-          <input type="radio" name="pets" value="0" id="no-pets">
-        </div>
-        <div class="radios">
-          <label for="animalPerson">a person who can't bear the anguish that comes with imagining having to say goodby e to my pet/s.</label>
-          <input type="radio" name="pets" value="26" id="animalPerson">
-        </div>
-        <div class="radios">
-          <label for="birdPerson">a person who can identify a bird call or two (or more) and owns a pair of binoculars.</label>
-          <input type="radio" name="pets" value="17" id="birdPerson">
+        <div class="radios">  
+          <div class="form-check">
+            <label for="dogPerson">a dog person.</label>
+            <input type="radio" name="pets" value="3" id="dogPerson" checked>
+          </div>
+          <div class="form-check">
+            <label for="catPerson">a cat person.</label>
+            <input type="radio" name="pets" value="3" id="catPerson">
+          </div>
+          <div class="form-check">
+            <label for="ferretPerson">a ferret person. (<em>ie.</em> I currently count at least one ferret as a family member.)</label>
+            <input type="radio" name="pets" value="3" id="ferretPerson">
+          </div>
+          <div class="form-check">
+            <label for="dovePerson">a person who feeds pigeons (ducks count, too), even just that one time.</label>
+            <input type="radio" name="pets" value="13" id="dovePerson">
+          </div>
+          <div class="form-check">
+            <label for="no-pets">a no-pet person.</label>
+            <input type="radio" name="pets" value="0" id="no-pets">
+          </div>
+          <div class="form-check">
+            <label for="animalPerson">a person who can't bear the anguish that comes with imagining having to say goodbye to any one of my many pets.</label>
+            <input type="radio" name="pets" value="26" id="animalPerson">
+          </div>
+          <div class="form-check">
+            <label for="birdPerson">a person who can identify a bird call or two (or more) and owns a pair of binoculars.</label>
+            <input type="radio" name="pets" value="-13" id="birdPerson">
+          </div>
         </div>
       </div>
       <div class="question5">
         <h3 class="question-text">Check the box next to any statement which describes you:</h3>
         <div class="checkboxes">
           <label for="font-oriented">I have recently gone down a coding deep dive into how to make or at least edit a font.</label>
-          <input type="checkbox" id="font-oriented" value="front-end" checked>
+          <input type="checkbox" id="font-oriented" name="ideas" value="front-end" checked>
         </div>
         <div class="checkboxes">
           <label for="number-oriented">I have recently gone down an internet-reading deep dive about a data science topic.</label>
-          <input type="checkbox" id="number-oriented" value="back-end">
+          <input type="checkbox" id="number-oriented" name="ideas"value="back-end">
         </div>
         <div class="checkboxes">
           <label for="solution-oriented">A quick, mostly working solution from even a four-year-old or older Stack Overflow post is really all I need right now.</label>
-          <input type="checkbox" id="solution-oriented" value="dead-end">
+          <input type="checkbox" id="solution-oriented" name="ideas" value="dead-end">
         </div>
         <div class="checkboxes">
           <label for="idea-oriented">I have pondered how concepts from other fields of inquiry might have some useful bearing on the AR / VR work that I am doing in my job.</label>
-          <input type="checkbox" id="idea-oriented" value="space-cadet">
+          <input type="checkbox" id="idea-oriented" name="ideas" value="space-cadet">
         </div>
         <div class="checkboxes">
           <label for="anti-vr">AR and VR are both dumb. People should really be taking more hikes.</label>
-          <input type="checkbox" id="anti-vr" value="say-no-to-vr">
+          <input type="checkbox" id="anti-vr" name="ideas" value="say-no-to-vr">
         </div>
         <div class="checkboxes">
           <label for="fin-tech">I will someday (or have already) craft an algorithm that churns out bitcoins like nobodies' business.</label>
-          <input type="checkbox" id="fin-tech" value="dollar-sign">
+          <input type="checkbox" id="fin-tech" name="ideas" value="dollar-sign">
         </div>
         <div class="checkboxes">
           <label for="music">I own one or more of the following musical instruments/devices: piano, recorder, oboe, bass clarinet, flute, baritone horn, keyboard, guitar, MIDI keyboard, microphone whose inner workings I considered before buying.</label>
-          <input type="checkbox" id="music" value="dollar-sign">
+          <input type="checkbox" id="music"  name="ideas" value="musical">
         </div>
       </div>
       <div class="get-results">
         <button class="submit-responses" action="submit">
-          suggest me a language
+          show my suggestion
         </button>
       </div>
     </form>
@@ -147,8 +149,8 @@
       <p>Do feel free to provide feedback/suggestion via email. See survey's author contact below.</p>
       <p><a href="#" alt="takes user back to survey start">Click here to start survey over.</a></p> 
     </div>
-    <footer>
-      <div class="survey-nav">
+    <footer class="navigation">
+      <div class="survey-buttons">
         <button class="btn btn-primary">Previous</button>
         <button class="btn btn-primary">Next</button>
       </div>
@@ -159,14 +161,3 @@
   </div>
 </body>
 </html>
-<!--
-1. C
-2. Java
-3. Python
-4. C++
-5. Ruby
-6. Go
-7. Swift
-8. TypeScript
-9. Kotlin
--->
