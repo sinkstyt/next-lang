@@ -1,4 +1,3 @@
-// Business Logic ------->
 function advanceMaker() {
   let currentQuestion = 0;
   function advanceToNextQuestion() {
@@ -8,7 +7,7 @@ function advanceMaker() {
       $("form").reset();
     } else if (1 >= currentQuestion < 6) {
       $(`div.question${currentQuestion}`).show();
-      $(`div.question${currentQuestion}`).prev().slideUp();
+      $(`div.question${currentQuestion}`).prev().addClass("invisible");
     } else {
       console.log(`How did you manage to get to this value of currentQuestion: ${currentQuestion}?`)
     }
@@ -16,6 +15,11 @@ function advanceMaker() {
   return advanceToNextQuestion;
 }
 const advancer = advanceMaker();
+
+function previous() {
+  let curQuestion = $("div[class!=invisible]").data();
+  console.log(curQuestion);
+}
 
 function selectLang(obj) {
   let newObj = obj; // this only makes a shallow copy of resultsObj
@@ -78,13 +82,12 @@ $(document).ready(function() {
   });
   $("button#logic-sensed").click(function() {
     advancer();
-  })
+  });
+  $("button.btn-primary").click(function() {
+    advancer();
+  });
   // Back button:
   $(".btn-danger").click(function() {
-    previousQuestion();
+    previous();
   });
-  // nav button which goes to next (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results. Also, call this function to advance by one question input:button with "#logic-sensed" is clicked.
-
-  // nav button which goes back one survey question, edge case: on first question--> alert("there's no where 'previous' to go")
-
 });
