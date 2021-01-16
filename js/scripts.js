@@ -1,11 +1,23 @@
 // Business Logic ------->
-// incoming from UI: a variable that holds a number -->
-// func that takes single num as param, does some branching, returns a suggested language as a string
+// func that conducts branching based on values stored at keys within resultsObj. When branching is finished, new output values are stored as strings to be accessed at time of displaying results
 
-// from UI: an object with keys:values for all input string values -->
-// func that takes obj as param, returns an array of length two. A string stored at each index.
-
-// func that takes in array of strings, returns one long string having inserted the two input string values meaningfully into a paragraph giving some pseudo-logic/explanation for suggested language
+function advanceMaker() {
+  let currentQuestion = 0;
+  function advanceToNextQuestion() {
+    currentQuestion++;
+    if (currentQuestion >= 6) {
+      currentQuestion = 0;
+      $("form").reset();
+    } else if (1 >= currentQuestion < 6) {
+      $(`div.question${currentQuestion}`).show();
+      $(`div.question${currentQuestion}`).prev().slideUp();
+    } else {
+      console.log(`How did you manage to get to this value of currentQuestion: ${currentQuestion}?`)
+    }
+  }
+  return advanceToNextQuestion;
+}
+const advancer = advanceMaker();
 
 // UI Logic ------------->
 $(document).ready(function() {
@@ -29,7 +41,14 @@ $(document).ready(function() {
     $(".results").show();
     $('#transportation_survey').hide();
   });
-  // nav button which triggers a forwards through the survey questions (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results. Also, call this function to advance by one question input:button with "#logic-sensed" is clicked.
+  $("button#logic-sensed").click(function() {
+    advancer();
+  })
+  // Back button:
+  $(".btn-danger").click(function() {
+    previousQuestion();
+  });
+  // nav button which goes to next (hide current question div, show next). edge case: on last survey question, a click on this next button triggers click that submits form, shows results. Also, call this function to advance by one question input:button with "#logic-sensed" is clicked.
 
   // nav button which goes back one survey question, edge case: on first question--> alert("there's no where 'previous' to go")
 
