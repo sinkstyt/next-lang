@@ -1,6 +1,4 @@
 // Business Logic ------->
-// func that conducts branching based on values stored at keys within resultsObj. When branching is finished, new output values are stored as strings to be accessed at time of displaying results
-
 function advanceMaker() {
   let currentQuestion = 0;
   function advanceToNextQuestion() {
@@ -19,12 +17,46 @@ function advanceMaker() {
 }
 const advancer = advanceMaker();
 
-// UI Logic ------------->
+function selectLang(obj) {
+  let newObj = obj; // this only makes a shallow copy of resultsObj
+  for (const key in newObj) {
+    if (typeof key != "number") {
+      this.resultsText += key + ", " + "<br>";
+    } else if (key == "ambitionNumber") {
+      if (key <= 0) {
+        this.suggestedLang = "C";
+      } else if (0 < key < 3) {
+        this.suggestedLang = "Java";
+      } else if (3 <= key < 6) {
+        this.suggestedLang = "Python";
+      } else if (6 <= key < 8) {
+        this.suggestedLang = "C + + ";
+      } else if (8 <= key < 11) {
+        this.suggestedLang = "Ruby";
+      } else if (11 <= key < 13) {
+        this.suggestedLang = "Go";
+      } else if (13 <= key < 17) {
+        this.suggestedLang = "Swift";
+      } else if (17 <= key < 20) {
+        this.suggestedLang = "TypeScript";
+      } else {
+        this.suggestedLang = "Kotlin";
+      }
+    } else {
+      this.suggestedLang = "JavaScript";
+    }
+  }
+  if (this.quickBuck != 0) {
+    this.suggestedLang = "Swift";
+  }
+  console.log(newObj);
+  return newObj;
+}
+
 $(document).ready(function() {
   $("form.survey").submit(function(event) {
     event.preventDefault();
     let resultsObj = {};
-    // collect all number values by question onto a single key-value pairing stored on survey-results object.
     resultsObj.quickBuck = $("input:radio[name=appStore]:checked").val();
     let ambitionNumber = 0;
     $("input:checkbox[name=lifestyle]:checked").each(function() {
@@ -38,8 +70,11 @@ $(document).ready(function() {
       ideasArray.push($(this).val());
     });
     resultsObj.ideas = ideasArray;
-    $(".results").show();
-    $('#transportation_survey').hide();
+    $('form').slideUp();
+    let finalResultsObject = selectLang(resultsObj);
+    let resultsFullText = '';
+    resultsFullText += `Based on an a sort-of ambition score alone,(which in your case calculated to an impressive ${finalResultsObject.ambitionNumber} ambition points), this page unhesitatingly suggests you learn ${finalResultsObject.suggestedLang}.`
+    $(".results").fadeIn(550);
   });
   $("button#logic-sensed").click(function() {
     advancer();
@@ -52,16 +87,4 @@ $(document).ready(function() {
 
   // nav button which goes back one survey question, edge case: on first question--> alert("there's no where 'previous' to go")
 
-
 });
-/*
-1. C
-2. Java
-3. Python
-4. C++
-5. Ruby
-6. Go
-7. Swift
-8. TypeScript
-9. Kotlin
-*/
