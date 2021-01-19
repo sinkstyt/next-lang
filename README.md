@@ -55,7 +55,9 @@ _something like the following will be returned in your terminal:_
 
 ## Known Bugs
 
-* _No known major bugs exist in the current project, but note that it has only been tested in Google Chrome running on macOS Big Sur Version 11.1.
+* _The navigation buttons "Previous" and "next" do not work as expected._
+* _The survey's results were not yet displaying properly during most recent debug attempts._
+* prject has only been tested in Google Chrome running on macOS Big Sur Version 11.1.
 
 ## License
 _This project is offered under The Open Software License 3.0 (OSL-3.0)_<br>
