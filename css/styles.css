@@ -20,3 +20,10 @@ div[class^="question"], .get-results, .results {
   justify-self: center;
   border: dotted chartreuse;
 }
+img {
+  width: 75%;
+}
+.copyright {
+  font-size: 0.8rem;
+  text-align: right;
+}

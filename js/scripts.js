@@ -1,13 +1,17 @@
 function advanceMaker() {
   let currentQuestion = 0;
-  function advanceToNextQuestion() {
-    currentQuestion++;
+  function advanceToNextQuestion(direction) {
     if (currentQuestion >= 6) {
       currentQuestion = 0;
-      $("form").reset();
-    } else if (1 >= currentQuestion < 6) {
+      $('form').submit();
+    } else if (direction === 1 && currentQuestion < 5) {
+      currentQuestion++;
       $(`div.question${currentQuestion}`).show();
-      $(`div.question${currentQuestion}`).prev().addClass("invisible");
+      $(`div.question${currentQuestion}`).prev().slideUp();
+    } else if (direction === -1) {
+      currentQuestion--;
+      $(`div.question${currentQuestion}`).show();
+      $(`div.question${currentQuestion}`).next().slideUp();
     } else {
       console.log(`How did you manage to get to this value of currentQuestion: ${currentQuestion}?`)
     }
@@ -16,18 +20,13 @@ function advanceMaker() {
 }
 const advancer = advanceMaker();
 
-function previous() {
-  let curQuestion = $("div[class!=invisible]").data();
-  console.log(curQuestion);
-}
-
 function selectLang(obj) {
   let newObj = obj; // this only makes a shallow copy of resultsObj
   for (const key in newObj) {
     if (typeof key != "number") {
-      this.resultsText += key + ", " + "<br>";
+      resultsText += key + ", " + "<br>";
     } else if (key == "ambitionNumber") {
-      if (key <= 0) {
+      if (newObj[key] <= 0) {
         this.suggestedLang = "C";
       } else if (0 < key < 3) {
         this.suggestedLang = "Java";
@@ -75,19 +74,19 @@ $(document).ready(function() {
     });
     resultsObj.ideas = ideasArray;
     $('form').slideUp();
+    $('results').slideDown();
     let finalResultsObject = selectLang(resultsObj);
     let resultsFullText = '';
     resultsFullText += `Based on an a sort-of ambition score alone,(which in your case calculated to an impressive ${finalResultsObject.ambitionNumber} ambition points), this page unhesitatingly suggests you learn ${finalResultsObject.suggestedLang}.`
     $(".results").fadeIn(550);
   });
   $("button#logic-sensed").click(function() {
-    advancer();
+    advancer(1);
   });
   $("button.btn-primary").click(function() {
-    advancer();
+    advancer(1);
   });
-  // Back button:
   $(".btn-danger").click(function() {
-    previous();
+    advancer(-1);
   });
 });
