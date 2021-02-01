@@ -7,13 +7,16 @@ h1, h2 {
 .invisible {
   display: none;
 }
-div[class^="question"], .get-results, .results {
+div[class^="question"], .results {
   display: none;
 }
 .navigation {
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 2.2rem;
   padding: 0px 0px 4px;
+}
+.survey-buttons button {
+  align-items: center;
+  margin-left: 15%;
 }
 .question-text {
   font-style: italic;
@@ -26,4 +29,7 @@ img {
 .copyright {
   font-size: 0.8rem;
   text-align: right;
+}
+.get-results {
+  margin: 15px;
 }
