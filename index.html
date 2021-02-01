@@ -22,7 +22,7 @@
       <p>Without a whole lot of fuss or even a decent introduction to the qualities or typical applications of these languages, the image below shows which languages this survey could possibly suggest you learn next. If you've already got a pretty good handle on all these languages, then this survey is perhaps not for you, you polymath.</p>
       <img src="img/all-languages-image1.png" alt="an image showing the logos for C, Java, Python, C++, Ruby, Go, Swift, TypeScript, Kotlin">
     </div>
-    <form action="" class="survey">
+    <form class="survey">
       <div class="question1">
         <h3 class="question-text">Have you always dreamed of a steady trickle of advertisement dollars accruing in your pocket, because you single-handedly built and published a mindless game that Apple finally allowed you to peddle via its App Store?</h3>
         <div class="form-check">
@@ -38,28 +38,28 @@
         <h3 class="question-text">Please select any of the following phrases that would best describe you five years from now</h3>
         <div class="checkboxes">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="jrDev" value="0" />
-            <label class="form-check-label" name="lifestyle" for="jrDev">junior developer with happy work-life balance</label>
+            <input class="form-check-input" type="checkbox" name="lifestyle" id="jrDev" value="2" />
+            <label class="form-check-label" for="jrDev">junior developer with happy work-life balance</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="midLevel" value="3" />
-            <label class="form-check-label" name="lifestyle" for="midLevel">mid-level developer who has allowed hairstyle to assume a life of its own</label>
+            <input class="form-check-input" type="checkbox"  name="lifestyle"id="midLevel" value="5" />
+            <label class="form-check-label" for="midLevel">mid-level developer who has allowed hairstyle to assume a life of its own</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="projMgr" value="4" />
-            <label class="form-check-label" name="lifestyle" for="projMgr">project manager who is "managing"</label>
+            <input class="form-check-input" type="checkbox" name="lifestyle" id="projMgr" value="4" />
+            <label class="form-check-label" for="projMgr">project manager who is "managing"</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="jrDevPlus" value="1" />
-            <label class="form-check-label" name="lifestyle" for="jrDevPlus">junior developer who is about to switch roles, achieve significant raise</label>
+            <input class="form-check-input" type="checkbox" id name="lifestyle"="jrDevPlus" value="10" />
+            <label class="form-check-label" for="jrDevPlus">junior developer who is about to switch roles, achieve significant raise</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="hanging" value="0" />
-            <label class="form-check-label" name="lifestyle" for="hanging">mid-level developer who prioritizes the greater good</label>
+            <input class="form-check-input" type="checkbox" name="lifestyle" id="hanging" value="0" />
+            <label class="form-check-label" for="hanging">mid-level developer who prioritizes the greater good</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="boss" value="9" />
-            <label class="form-check-label" name="lifestyle" for="boss">soliciting series A (or B, I guess) funding for four-or-five person company</label>
+            <input class="form-check-input" type="checkbox" name="lifestyle" id="boss" value="12" />
+            <label class="form-check-label" for="boss">soliciting series A (or B, I guess) funding for four-or-five person company</label>
           </div>
         </div>
       </div>
@@ -136,18 +136,17 @@
         </div>
       </div>
       <div class="get-results">
-        <input type="submit" class="submit-responses">
-          show my suggestion
-        </input>
+        <button type="submit" value="submit" class="submit-responses">
+          show my suggested language
+        </button>
       </div>
     </form>
     <div class="results">
-      <h3 class="results-heading">Drum roll.. This survey hereby suggests your next language ought to be</h3>
+      <h3 class="results-heading"></h3>
       <p class="suggest-lang"></p>
       <small class="disclaimer">Do note that the advice here has not been rigorously tested against life outcomes and should be taken with that proverbial salt grain.</small>
       <p>Thank you for taking my survey. Happy coding, you wonderful person!</p>
       <p>Do feel free to provide feedback/suggestion via email. See survey's author contact below.</p>
-      <p><a href="#" alt="takes user back to survey start" disabled>Click here to start survey over.</a></p> 
     </div>
     <footer class="navigation">
       <div class="survey-buttons">
