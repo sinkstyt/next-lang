@@ -1,10 +1,8 @@
 function advanceMaker() {
   let currentQuestion = 0;
   function advanceToNextQuestion(direction) {
-    if (currentQuestion >= 6) {
-      currentQuestion = 0;
-      $('form').submit();
-    } else if (direction === 1 && currentQuestion < 5) {
+    direction = parseInt(direction);
+    if (direction === 1 && currentQuestion < 5) {
       currentQuestion++;
       $(`div.question${currentQuestion}`).show();
       $(`div.question${currentQuestion}`).prev().slideUp();
@@ -13,7 +11,10 @@ function advanceMaker() {
       $(`div.question${currentQuestion}`).show();
       $(`div.question${currentQuestion}`).next().slideUp();
     } else {
-      console.log(`How did you manage to get to this value of currentQuestion: ${currentQuestion}?`)
+      $("div.question*").slideUp();
+      $("form").submit(function(event) {
+        event.preventDefault();
+      });
     }
   }
   return advanceToNextQuestion;
@@ -22,51 +23,50 @@ const advancer = advanceMaker();
 
 function selectLang(obj) {
   let newObj = obj; // this only makes a shallow copy of resultsObj
+  let resultsText = '';
   for (const key in newObj) {
-    if (typeof key != "number") {
-      resultsText += key + ", " + "<br>";
-    } else if (key == "ambitionNumber") {
+    if (key == "ambitionNumber") {
       if (newObj[key] <= 0) {
-        this.suggestedLang = "C";
-      } else if (0 < key < 3) {
-        this.suggestedLang = "Java";
-      } else if (3 <= key < 6) {
-        this.suggestedLang = "Python";
-      } else if (6 <= key < 8) {
-        this.suggestedLang = "C + + ";
-      } else if (8 <= key < 11) {
-        this.suggestedLang = "Ruby";
-      } else if (11 <= key < 13) {
-        this.suggestedLang = "Go";
-      } else if (13 <= key < 17) {
-        this.suggestedLang = "Swift";
-      } else if (17 <= key < 20) {
-        this.suggestedLang = "TypeScript";
+        newObj.suggestedLang = "C";
+      } else if (newObj[key] < 3) {
+        newObj.suggestedLang = "Java";
+      } else if (newObj[key] < 6) {
+        newObj.suggestedLang = "Python";
+      } else if (newObj[key] < 8) {
+        newObj.suggestedLang = "C + + ";
+      } else if (newObj[key] < 11) {
+        newObj.suggestedLang = "Ruby";
+      } else if (newObj[key] < 13) {
+        newObj.suggestedLang = "Go";
+      } else if (newObj[key] < 17) {
+        newObj.suggestedLang = "Swift";
+      } else if (newObj[key] < 20) {
+        newObj.suggestedLang = "TypeScript";
       } else {
-        this.suggestedLang = "Kotlin";
+        newObj.suggestedLang = "Kotlin";
       }
+    } else if (typeof key != "number") {
+      resultsText += key + `: ${newObj[key]} <br>`;
     } else {
-      this.suggestedLang = "JavaScript";
+      newObj.suggestedLang = "JavaScript";
     }
   }
-  if (this.quickBuck != 0) {
-    this.suggestedLang = "Swift";
+  if (newObj.quickBuck == "11") {
+    newObj.suggestedLang = "Swift";
   }
-  console.log(newObj);
   return newObj;
 }
 
 $(document).ready(function() {
+  let resultsObj = {};
   $("form.survey").submit(function(event) {
     event.preventDefault();
-    let resultsObj = {};
     resultsObj.quickBuck = $("input:radio[name=appStore]:checked").val();
-    let ambitionNumber = 0;
+    resultsObj.ambitionNumber = 0;
     $("input:checkbox[name=lifestyle]:checked").each(function() {
-      ambitionNumber += parseInt($(this).val());
-    })
-    resultsObj.ambitionNumber = ambitionNumber;
-    resultsObj.ambitionNumber += 4;
+      resultsObj.ambitionNumber += parseInt($(this).val());
+    });
+    resultsObj["ambitionNumber"] += 4;
     resultsObj.petLove = $("input:radio[name=pets]:checked").val();
     ideasArray = [];
     $("input:checkbox[name=ideas]:checked").each(function() {
@@ -77,7 +77,9 @@ $(document).ready(function() {
     $('results').slideDown();
     let finalResultsObject = selectLang(resultsObj);
     let resultsFullText = '';
-    resultsFullText += `Based on an a sort-of ambition score alone,(which in your case calculated to an impressive ${finalResultsObject.ambitionNumber} ambition points), this page unhesitatingly suggests you learn ${finalResultsObject.suggestedLang}.`
+    resultsFullText += `...based on an a sort-of ambition score alone, (which in your case calculated to an impressive ${finalResultsObject.ambitionNumber} ambition points), this page unhesitatingly suggests you learn ${finalResultsObject.suggestedLang}.`
+    $("h3.results-heading").html(`Drum roll.. This survey hereby suggests your next language ought to be ${finalResultsObject.suggestedLang}`);
+    $("p.suggest-lang").html(resultsFullText);
     $(".results").fadeIn(550);
   });
   $("button#logic-sensed").click(function() {
